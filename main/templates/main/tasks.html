@@ -1,0 +1,70 @@
+{% extends 'main/template.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block url_add_task %}
+
+    <a href="#add_task" type="button" data-toggle="modal"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить запись</button></li></a>
+
+{% endblock %}
+
+
+{% block main %}
+
+    <div class="features">
+            {% if tasks %}
+            {% for task in tasks %}
+            <div class="alert alert-secondary">
+                <dl>
+                    <dt>{{ task.text }}</dt>
+                </dl>
+                <form method="post" class="work-form delete-update">
+                    {% csrf_token %}
+                    <a href="#{{ task.id }}" class="btn btn-primary update-btn" type="button" data-toggle="modal">
+                        Обновить запись
+                    </a>
+                    <button class="btn btn-danger delete-btn" name="delete-task" type="submit" value="{{ task.id }}">
+                        Удалить запись
+                    </button>
+                </form>
+            </div>
+
+            <div class="modal fade" id="{{ task.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-body">
+                      <form method="post" class="modal-form">
+                            {% csrf_token %}
+                            <input placeholder="{{ task.text }}" name="enter_text" class="form-control">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                            <button type="submit" name="update-task"  class="btn btn-primary" value="{{ task.id }}">Сохранить</button>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {% endfor %}
+            {% else %}
+                <p>Записей нет</p>
+            {% endif %}
+    </div>
+
+    <div class="features">
+        <div class="modal fade" id="add_task" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                  <form method="post" class="modal-form">
+                        {% csrf_token %}
+                        <input placeholder="" name="new_task" class="form-control">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                        <button type="submit" class="btn btn-primary">Добавить</button>
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+body {
+    background-color: rgb(33, 218, 218);
+    background-image: url("https://w-dog.ru/wallpapers/2/4/461318047717931/xejan-jingu-kyoto-yaponiya-xram-xejan-kioto-ozero-prud-vesna-park-derevya-sakura-otrazhenie.jpg");
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+aside {
+    float: left;
+    background: rgba(46, 44, 44, 0.5);
+    color: #fff;
+    border-right: 5px solid rgb(63, 56, 56);
+    width: 250px;
+    height: 200px;
+    padding: 2.5%;
+    border-bottom: 5px solid rgb(63, 56, 56);
+}
+
+aside ul {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+aside ul li {
+    color: #fff;
+    margin-top: 20px;
+    font-size: large;
+    transition: transform 0.6s;
+}
+
+aside ul li:hover,
+aside ul a:hover {
+    color: rgb(214, 66, 66);
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+main .features {
+    float: left;
+    color: #000;
+    margin-top: 100px;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1 {
+    font-size: 50px;
+    position: relative;
+    top: -70px;
+}
+
+main .features p {
+    max-width: 400px;
+    margin: 10px auto;
+}
+
+.alert-secondary {
+    margin-left: 21%;
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 10px;
+    width: 60%;
+    box-shadow: 0 0 5px 2px;
+    background-color: rgba(101, 208, 235, 0.9);
+}
+
+dt {
+    background-color: rgba(11, 144, 177, 0.9);
+}
+
+.work-form {
+    position: relative;
+    top: -40px;
+    margin-left: 32%;
+    width: 500px;
+    margin-top: 50px;
+}
+
+.delete-update {
+    margin-top: 0;
+    margin-bottom: -30px;
+    margin-left: 5px;
+}
+
+.modal-form {
+    margin-bottom: 50px;
+}
+
+main .features a,
+main .features button {
+    color: #fff;
+    margin-top: 20px;
+    font-size: large;
+    transition: transform 0.6s;
+    position: relative;
+    bottom: -30px;
+}
+
+main .features .add-task {
+    position: relative;
+    top: -30px;
+}
+
+main .features a:hover,
+main .features button:hover {
+    color: #fff;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+.update-btn {
+    position: relative;
+    left: -80px;
+    top: 8px;
+}
+
+.delete-btn {
+    position: relative;
+    right: -220px;
+    top: 8px;
+}
