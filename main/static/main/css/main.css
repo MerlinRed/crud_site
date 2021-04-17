@@ -5,106 +5,101 @@
 body {
     background-color: rgb(33, 218, 218);
     background-image: url("https://w-dog.ru/wallpapers/2/4/461318047717931/xejan-jingu-kyoto-yaponiya-xram-xejan-kioto-ozero-prud-vesna-park-derevya-sakura-otrazhenie.jpg");
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+
+.content {
+    display: -webkit-box; /* Safari, iOS 6 и ранних версиях; Android, старых WebKit */
+    display: -moz-box; /*  Firefox (может и глючить) */
+    display: -ms-flexbox; /*  IE 10 */
+    display: -webkit-flex; /* Chrome 21+ */
+    display: flex; /* Opera 12.1+, Firefox 22+ */
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
 
 aside {
-    float: left;
-    background: rgba(46, 44, 44, 0.5);
-    color: #fff;
-    border-right: 5px solid rgb(63, 56, 56);
-    width: 250px;
-    height: 200px;
-    padding: 2.5%;
-    border-bottom: 5px solid rgb(63, 56, 56);
+    display: flex;
+    width: 15%;
 }
 
 aside ul {
     list-style: none;
-    position: absolute;
-    left: 0;
-    top: 0;
 }
 
 aside ul li {
     color: #fff;
-    margin-top: 20px;
-    font-size: large;
-    transition: transform 0.6s;
+    margin-top: 10px;
+    transition: transform 0.6s; /* добавили плавность к свойству transform */
 }
 
 aside ul li:hover,
 aside ul a:hover {
-    color: rgb(214, 66, 66);
-    transform: scale(1.05);
+    /* добавляем стили для двух тегов через псевдокласс hover */
+    color: #eb5959;
     text-decoration: none;
+    transform: scale(1.05);
 }
 
-main .features {
-    float: left;
-    color: #000;
-    margin-top: 100px;
+.features .index-h1 {
+    font-size: 5em;
+}
+
+.features .todo {
+    background-color: rgba(155, 154, 138, 0.8);
     text-align: center;
-    width: 75%;
+    border-radius: 15px;
+    box-shadow: 0 0 5px 2px;
 }
 
-main .features h1 {
-    font-size: 50px;
-    position: relative;
-    top: -70px;
+main {
+    width: 85%;
 }
 
-main .features p {
-    max-width: 400px;
-    margin: 10px auto;
+main dl {
+    width: 100%;
 }
 
-.alert-secondary {
-    margin-left: 21%;
+main dl dt {
+    background-color: rgba(255, 255, 255, 0.2);
+    font-style: italic;
     font-size: large;
     font-weight: bold;
     margin-bottom: 10px;
-    width: 60%;
-    box-shadow: 0 0 5px 2px;
-    background-color: rgba(101, 208, 235, 0.9);
+    width: 85%;
 }
 
-dt {
-    background-color: rgba(11, 144, 177, 0.9);
-}
-
-.work-form {
-    position: relative;
-    top: -40px;
-    margin-left: 32%;
-    width: 500px;
-    margin-top: 50px;
-}
-
-.delete-update {
-    margin-top: 0;
-    margin-bottom: -30px;
-    margin-left: 5px;
+.todo .delete-update {
+    text-align: end;
+    margin-top: -8%;
 }
 
 .modal-form {
-    margin-bottom: 50px;
+    display: flex;
+}
+
+.modal-form .modal-btn {
+    margin-left: 2%;
+    height: 100%;
 }
 
 main .features a,
 main .features button {
     color: #fff;
-    margin-top: 20px;
-    font-size: large;
     transition: transform 0.6s;
-    position: relative;
-    bottom: -30px;
-}
-
-main .features .add-task {
-    position: relative;
-    top: -30px;
 }
 
 main .features a:hover,
@@ -112,16 +107,4 @@ main .features button:hover {
     color: #fff;
     transform: scale(1.05);
     text-decoration: none;
-}
-
-.update-btn {
-    position: relative;
-    left: -80px;
-    top: 8px;
-}
-
-.delete-btn {
-    position: relative;
-    right: -220px;
-    top: 8px;
 }

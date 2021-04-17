@@ -14,30 +14,30 @@
     <div class="features">
             {% if tasks %}
             {% for task in tasks %}
-            <div class="alert alert-secondary">
+            <div class="alert alert-secondary todo">
                 <dl>
                     <dt>{{ task.text }}</dt>
                 </dl>
                 <form method="post" class="work-form delete-update">
                     {% csrf_token %}
                     <a href="#{{ task.id }}" class="btn btn-primary update-btn" type="button" data-toggle="modal">
-                        Обновить запись
+                        <i class="fas fa-pen-fancy"></i>
                     </a>
                     <button class="btn btn-danger delete-btn" name="delete-task" type="submit" value="{{ task.id }}">
-                        Удалить запись
+                      <i class="fas fa-trash"></i>
                     </button>
                 </form>
             </div>
 
             <div class="modal fade" id="{{ task.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" role="document">
+              <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                   <div class="modal-body">
                       <form method="post" class="modal-form">
                             {% csrf_token %}
-                            <input placeholder="{{ task.text }}" name="enter_text" class="form-control">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                            <button type="submit" name="update-task"  class="btn btn-primary" value="{{ task.id }}">Сохранить</button>
+                            <textarea placeholder="{{ task.text }}" name="enter_text" class="form-control"></textarea>
+                            <button type="submit" name="update-task"  class="btn btn-primary modal-btn" value="{{ task.id }}">Сохранить</button>
+                            <button type="button" class="btn btn-secondary modal-btn" data-dismiss="modal">Закрыть</button>
                       </form>
                   </div>
                 </div>
@@ -52,14 +52,14 @@
 
     <div class="features">
         <div class="modal fade" id="add_task" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
+          <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-body">
                   <form method="post" class="modal-form">
                         {% csrf_token %}
-                        <input placeholder="" name="new_task" class="form-control">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-                        <button type="submit" class="btn btn-primary">Добавить</button>
+                        <textarea placeholder="" name="new_task" class="form-control"></textarea>
+                        <button type="submit" class="btn btn-primary modal-btn">Добавить</button>
+                        <button type="button" class="btn btn-secondary modal-btn" data-dismiss="modal">Закрыть</button>
                   </form>
               </div>
             </div>
