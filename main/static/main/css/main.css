@@ -83,6 +83,7 @@ main dl dt {
     font-weight: bold;
     margin-bottom: 10px;
     width: 84%;
+    color: #000;
 }
 
 .todo .delete-update {
