@@ -5,7 +5,7 @@ from .models import Task
 
 def index(request):
     data = {
-        'title': 'Главная'
+        'title': 'Описание сайта'
     }
     return render(request=request, template_name='main/index.html', context=data)
 

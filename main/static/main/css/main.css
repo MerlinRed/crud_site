@@ -54,12 +54,16 @@ aside ul a:hover {
     transform: scale(1.05);
 }
 
-.features .index-h1 {
+.features .index-p {
     font-size: 5em;
+    text-align: center;
+    background-color: rgba(215, 224, 236, 0.8);
+    color: rgb(35, 36, 35);
+    box-shadow: 0 0 5px 2px;
 }
 
 .features .todo {
-    background-color: rgba(155, 154, 138, 0.8);
+    background-color: rgba(184, 182, 166, 0.8);
     text-align: center;
     border-radius: 15px;
     box-shadow: 0 0 5px 2px;
@@ -74,17 +78,17 @@ main dl {
 }
 
 main dl dt {
-    background-color: rgba(255, 255, 255, 0.2);
     font-style: italic;
     font-size: large;
     font-weight: bold;
     margin-bottom: 10px;
-    width: 85%;
+    width: 84%;
 }
 
 .todo .delete-update {
     text-align: end;
     margin-top: -8%;
+    width: 100%;
 }
 
 .modal-form {
