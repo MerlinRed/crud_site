@@ -14,9 +14,10 @@ class CRUD:
 
     @staticmethod
     def show_tasks(request):
+        tasks = Task.objects.filter(users_id_id=request.user.id)
         data = {
             'title': 'Задачи',
-            'tasks': Task.objects.order_by('id'),
+            'tasks': tasks
         }
         CRUD.add_task(request)
         CRUD.update_task(request)
@@ -30,6 +31,7 @@ class CRUD:
             task_text = request.POST['new_task']
             new_task = Task()
             new_task.text = task_text
+            new_task.users_id_id = request.user.id
             new_task.save()
 
     @staticmethod
