@@ -1,0 +1,17 @@
+{% extends 'registration/template.html' %}
+
+{% block title_reg %}{{ title }}{% endblock %}
+
+{% block main_reg %}
+<div class="features">
+    <h1>Вход на сайт</h1>
+    <form method="post" class="work-form delete-update">
+         {{ form.non_field_errors }}
+         {% csrf_token %}
+         {{ form.as_p }}
+         <button class="btn btn-success create-user-btn" type="submit">
+            Войти
+         </button>
+     </form>
+</div>
+{% endblock %}
