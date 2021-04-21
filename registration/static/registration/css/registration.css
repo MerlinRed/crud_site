@@ -1,0 +1,39 @@
+.selector-for-some-widget {
+    box-sizing: content-box;
+}
+
+body {
+    background-color:honeydew;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+
+main .features {
+    position: relative;
+    top: 100px;
+}
+
+main .features h1 {
+    text-align: center;
+}
+
+.error {
+    color: red;
+    text-decoration: none;
+    list-style: none;
+}
+
+main .features form .center{
+    text-align: center;
+}
+
+main .features form button {
+    color: #fff;
+    transition: transform 0.6s;
+}
+
+main .features form button:hover {
+    color: #fff;
+    transform: scale(1.05);
+    text-decoration: none;
+}

@@ -33,7 +33,7 @@ body {
 
 aside {
     display: flex;
-    width: 15%;
+    flex-wrap: nowrap;
 }
 
 aside ul {

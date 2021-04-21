@@ -16,19 +16,16 @@
         
         <aside>
             <ul>
+                {% if request.user.is_authenticated %}
+                <a href="{% url 'exit' %}" class="user"><li><i class="fas fa-user-circle"></i> {{ user.username }} Выйти</li></a>
+                {% else %}
+                <a href="{% url 'registration' %}" class="user"><li><i class="fas fa-clipboard"></i> Регистрация</li></a>
+                <a href="{% url 'authorization' %}" class="user"><li><i class="fas fa-sign-in-alt"></i> Вход</li></a>
+                {% endif %}
                 <a href="{% url 'home' %}"><li><i class="fas fa-home"></i> О сайте</li></a>
                 <a href="{% url 'tasks' %}"><li><i class="fas fa-newspaper"></i> Записи</li></a>
-                {% block url_add_task %}{% endblock %}
-            </ul>
-        </aside>
-
-        <aside class="authorization-registration">
-            <ul>
                 {% if request.user.is_authenticated %}
-                    <a href="{% url 'exit' %}"><li><i class="fas fa-home"></i> {{ user.username }} Выйти</li></a>
-                {% else %}
-                    <a href="{% url 'registration' %}"><li><i class="fas fa-home"></i> Регистрация</li></a>
-                    <a href="{% url 'authorization' %}"><li><i class="fas fa-newspaper"></i> Вход</li></a>
+                    {% block url_add_task %}{% endblock %}
                 {% endif %}
             </ul>
         </aside>

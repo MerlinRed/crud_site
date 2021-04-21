@@ -7,10 +7,12 @@
     <h1>Регистрация</h1>
     <form method="post" class="work-form delete-update">
          {% csrf_token %}
-         {{ form }}
-         <button class="btn btn-success create-user-btn" type="submit">
-            Зарегистрироваться
-         </button>
+         {{ form.as_p }}
+         <div class="center">
+            <button class="btn btn-success create-user-btn" type="submit">
+                Зарегистрироваться
+             </button>
+         </div>
      </form>
 </div>
 {% endblock %}
