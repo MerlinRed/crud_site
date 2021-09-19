@@ -1,2 +1,8 @@
 __pycache__/
 *.sqlite3
+.idea
+.env
+venv/
+env/
+crud/
+static_root/
